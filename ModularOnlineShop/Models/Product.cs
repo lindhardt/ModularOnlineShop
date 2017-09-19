@@ -9,6 +9,6 @@ namespace ModularOnlineShop.Models {
 		public decimal Price { get; set; }
 		public string Descrption { get; set; }
 		public string Name { get; set; }
-		public bool Stock { get; set; }
+		public int Stock { get; set; }
 	}
 }
