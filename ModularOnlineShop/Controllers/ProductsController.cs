@@ -12,7 +12,7 @@ namespace ModularOnlineShop.Controllers
 {
     public class ProductsController : Controller
     {
-        private ProductsContext db = new ProductsContext();
+        private OnlineShopContext db = new OnlineShopContext();
 
         // GET: Products
         public ActionResult Index()

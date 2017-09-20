@@ -6,7 +6,7 @@ using System.Web;
 
 namespace ModularOnlineShop.Models {
 	public class Product {
-		public string ProductID { get; set; }
+		public int ProductID { get; set; }
         [Required]
         [Display(Name = "Pris")]
         public decimal Price { get; set; }

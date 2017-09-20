@@ -5,7 +5,7 @@ using System.Web;
 using System.Data.Entity;
 
 namespace ModularOnlineShop.Models {
-    public class ProductsContext : DbContext {
+    public class OnlineShopContext : DbContext {
 
         public DbSet<Product> Products { get; set; }
 

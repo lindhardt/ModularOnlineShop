@@ -6,7 +6,7 @@ using System.Web;
 
 namespace ModularOnlineShop.Models {
 	public class Costumer {
-		public int CostumerID { get; set; }
+		/*public int CostumerID { get; set; }
         [Required]
         [Display(Name = "Fornavn")]
         public string FirstName { get; set; }
@@ -30,13 +30,13 @@ namespace ModularOnlineShop.Models {
         public string AddressLine2 { get; set; }
         [Required]
         [Display(Name = "Postnummer")]
-        public int ZipCode { get; set; }
+        public int ZipCode { get; set; }*/
 		
 	}
     public class LoginModel {
         //UserName
         [Required]
-        [Display(Name = "User name")]
+        [Display(Name = "User name")] //or email??
         public string UserName { get; set; }
 
         //Password
@@ -49,12 +49,25 @@ namespace ModularOnlineShop.Models {
         public bool RememberMe { get; set; }
     }
 
-    //A  model for registering
+    //Model for registering
     public class RegisterModel {
-        //UserName
+
+        public int CostumerID { get; set; }
+
         [Required]
-        [Display(Name = "User name")]
-        public string UserName { get; set; }
+        [Display(Name = "Fornavn")]
+        public string FirstName { get; set; }
+
+        [Required]
+        [Display(Name = "Efternavn")]
+        public string LastName { get; set; }
+
+        [Required]
+        [Display(Name = "E-mail")]
+        public string Email { get; set; }
+
+        [Display(Name = "Telefon")]
+        public string Phone { get; set; }
 
         //Password
         [Required]
@@ -68,6 +81,17 @@ namespace ModularOnlineShop.Models {
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        [Display(Name = "Adresse linje 1")]
+        public string AddressLine1 { get; set; }
+
+        [Display(Name = "Adresse linje 2")]
+        public string AddressLine2 { get; set; }
+
+        [Required]
+        [Display(Name = "Postnummer")]
+        public int ZipCode { get; set; }
     }
 
     //This model is for resetting the password

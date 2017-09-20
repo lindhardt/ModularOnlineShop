@@ -6,7 +6,9 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
+using ModularOnlineShop.Models;
 using System.Web.Http;
+using System.Data.Entity;
 
 namespace ModularOnlineShop
 {
@@ -15,6 +17,7 @@ namespace ModularOnlineShop
         void Application_Start(object sender, EventArgs e)
         {
             // Code that runs on application startup
+            Database.SetInitializer<OnlineShopContext>(new OnlineShopInitializer());
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             RouteConfig.RegisterRoutes(RouteTable.Routes);            
