@@ -12,7 +12,15 @@ namespace ModularOnlineShop.Controllers
 {
     public class ProductsController : Controller
     {
-        private OnlineShopContext db = new OnlineShopContext();
+        private OnlineShopContext db;
+
+        public ProductsController() {
+            db = new OnlineShopContext();
+        }
+
+        public ProductsController(OnlineShopContext Context) {
+            db = Context;
+        }
 
         // GET: Products
         public ActionResult Index()
@@ -21,12 +29,9 @@ namespace ModularOnlineShop.Controllers
         }
 
         // GET: Products/Details/5
-        public ActionResult Details(string id)
+        public ActionResult Details(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+            
             Product product = db.Products.Find(id);
             if (product == null)
             {
@@ -59,12 +64,9 @@ namespace ModularOnlineShop.Controllers
         }
 
         // GET: Products/Edit/5
-        public ActionResult Edit(string id)
+        public ActionResult Edit(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+            
             Product product = db.Products.Find(id);
             if (product == null)
             {
@@ -90,12 +92,9 @@ namespace ModularOnlineShop.Controllers
         }
 
         // GET: Products/Delete/5
-        public ActionResult Delete(string id)
+        public ActionResult Delete(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+            
             Product product = db.Products.Find(id);
             if (product == null)
             {
@@ -107,7 +106,7 @@ namespace ModularOnlineShop.Controllers
         // POST: Products/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
+        public ActionResult DeleteConfirmed(int id)
         {
             Product product = db.Products.Find(id);
             db.Products.Remove(product);

@@ -6,38 +6,14 @@ using System.Web;
 
 namespace ModularOnlineShop.Models {
 	public class Costumer {
-		/*public int CostumerID { get; set; }
-        [Required]
-        [Display(Name = "Fornavn")]
-        public string FirstName { get; set; }
-        [Required]
-        [Display(Name = "Efternavn")]
-        public string LastName { get; set; }
-        [Required]
-        [Display(Name = "E-mail")]
-        public string Email { get; set; }
-        [Display(Name = "Telefon")]
-        public string Phone { get; set; }
-        [Display(Name = "Password")]
-        [DataType(DataType.Password)]
-        public string Password { get; set; }
-        [Display(Name = "Gentag Password")]
-        public string ConfirmPassword { get; set; }
-        [Required]
-        [Display(Name = "Adresse linje 1")]
-        public string AddressLine1 { get; set; }
-        [Display(Name = "Adresse linje 2")]
-        public string AddressLine2 { get; set; }
-        [Required]
-        [Display(Name = "Postnummer")]
-        public int ZipCode { get; set; }*/
+		
 		
 	}
     public class LoginModel {
         //UserName
         [Required]
-        [Display(Name = "User name")] //or email??
-        public string UserName { get; set; }
+        [Display(Name = "E-mail")]
+        public string Email { get; set; }
 
         //Password
         [Required]

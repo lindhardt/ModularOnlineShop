@@ -8,6 +8,7 @@ namespace ModularOnlineShop.Models {
 	public class Product {
 		public int ProductID { get; set; }
         [Required]
+        [Range(0.00, 9999999999999999.99)]
         [Display(Name = "Pris")]
         public decimal Price { get; set; }
         [Display(Name = "Beskrivelse")]
